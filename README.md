@@ -35,15 +35,15 @@ Languages    :Python,sql,scala
      (note: we have to set metastore in hive in Itversity else will get while creating  database refer:https://www.youtube.com/watch?v=N_uz0gcQCIc)
 ## 4) upload orders file from local -->edgenode --> Hdfs location.
 
-## 5) create spark jar using scala and intellij ide to filter out records with status 'CLOSED' from orders.csv.
+## 5) Create spark jar using scala and intellij ide to filter out records with status 'CLOSED' from orders.csv.
 
 ## 6) Once spark jar is pushed to edge node using scp command  use spark submit to filter out records and store them in repo.
 
-## 7) create hive table from the spark table w.r.t the filtered records.
+## 7) Create hive table from the spark table w.r.t the filtered records.
 
 ## 8) Create habse table by joining the customers and orders csv files in hive.
 
-## 9)use Email operator in airflow to notify user w.r.t the successs/ failure of pipeline.
+## 9) Use Email operator in airflow to notify user w.r.t the successs/ failure of pipeline.
      (note: make sure to set smtp config in airflow.cfg
           smtp_user     --> your email
           smtp_password --> use the password from gmail generated from  App password (for this u need to enable 2 factor authentication)
