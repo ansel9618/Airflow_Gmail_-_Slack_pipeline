@@ -87,7 +87,7 @@ host and user name will be in the cluster page of Itversity once you get the sub
 
 ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/gmail_success_msg.png)
 
-#4)Pipeline failure and gamil message for the same
+#4)Pipeline failure and gmail message for the same
 
 ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/pipeline_fail.png)
 
