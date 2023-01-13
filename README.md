@@ -17,7 +17,7 @@ Cluster
 
 Orchestrator : Airflow
 
-Notification :Gmail/Slack
+Notification :Gmail SMTP_Server/Slack
 
 Editor       :Vscode,intellij
 
