@@ -67,3 +67,28 @@ Languages    :Python,sql,scala
 2) Airflow,vscode needs to be installed 
 3) Should have knowledge about creating spark jar and writing spark pgm in scala,Hive,Hbase,Hdfs,aws s3
 4) Need to get a Itversity distributed cluster subscription
+
+
+# Airflow Connection setup
+
+1)Setup a conection for S3 
+
+ host --> is the s3 bucket url and make sure the access permission is changed to public for the bucket
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/S3.png)
+
+2)connection for ITversity
+
+host and user name will be in the cluster page of Itversity once you get the subscription
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/Itversity.png)
+
+3)Pipeline success  and the gmail message received for the same
+
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/pipeline_success.png)
+
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/gmail_success_msg.png)
+
+#4)Pipeline failure and gamil message for the same
+
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/pipeline_fail.png)
+
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/gmail_failure_msg.png)
