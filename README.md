@@ -62,4 +62,8 @@ Languages    :Python,sql,scala
           smtp_timeout = 30
           smtp_retry_limit = 5
            ```
-
+ # Prequisites
+1) The Dag is created and implemented in ubuntu linux 22.04 LTS
+2) Airflow,vscode needs to be installed 
+3) Should have knowledge about creating spark jar and writing spark pgm in scala,Hive,Hbase,Hdfs,aws s3
+4) Need to get a Itversity distributed cluster subscription
