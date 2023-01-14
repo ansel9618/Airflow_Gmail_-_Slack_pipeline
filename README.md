@@ -69,7 +69,7 @@ also i've added the dag code for gmail(commented) and slack check dags folder fo
 
  # Prequisites
 1) The Dag is created and implemented in ubuntu linux 22.04 LTS
-2) Airflow,vscode needs to be installed 
+2) Airflow(2.5.0),python(3.10.6),scala(2.12),intellij,vscode needs to be installed 
 3) Should have knowledge about creating spark jar and writing spark pgm in scala,Hive,Hbase,Hdfs,aws s3
 4) Need to get a Itversity distributed cluster subscription
 
