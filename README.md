@@ -49,7 +49,7 @@ Languages    :Python,sql,scala
           smtp_password --> use the password from gmail generated from  App password (for this u need to enable 2 factor authentication)
                             using your mail password will lead to user credential error
           
-           ```
+          ```
           smtp_host = smtp.gmail.com
           smtp_starttls = True
           smtp_ssl = False
@@ -61,7 +61,12 @@ Languages    :Python,sql,scala
           smtp_mail_from = airflow@example.com
           smtp_timeout = 30
           smtp_retry_limit = 5
-           ```
+          ```
+## 10) Optional slack notification setup
+note: i'm adding the link for the slack-airlow setup--> https://naiveskill.com/airflow-slack-alert/
+also i've added the dag code for gmail(commented) and slack check dags folder for more info 
+
+
  # Prequisites
 1) The Dag is created and implemented in ubuntu linux 22.04 LTS
 2) Airflow,vscode needs to be installed 
@@ -87,8 +92,24 @@ host and user name will be in the cluster page of Itversity once you get the sub
 
 ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/gmail_success_msg.png)
 
-#4)Pipeline failure and gmail message for the same
+4)Pipeline failure and gmail message for the same
 
 ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/pipeline_fail.png)
 
 ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/gmail_failure_msg.png)
+
+5) optional slack setup (connection id for slack webhook)
+
+   ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_webhook_airflow_connection.png)
+
+  slack pipeline success and slack notification
+
+  ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_notify_success.png)
+  ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_success_msg.png)
+ 
+  slack pipeline failure and slack notification
+  
+  ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_notify_failure.png)
+  ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_failure_msg.png)
+ 
+  
