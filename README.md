@@ -113,3 +113,4 @@ host and user name will be in the cluster page of Itversity once you get the sub
   ![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/slack_failure_msg.png)
  
   
+Credits : This use case was done with the help from Trendytech 
