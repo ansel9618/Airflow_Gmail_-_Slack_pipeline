@@ -7,6 +7,7 @@ from airflow.contrib.operators.ssh_operator import SSHOperator
 from airflow import settings
 from airflow.models import Connection
 from airflow.operators.email_operator import EmailOperator
+from airflow.contrib.operators.slack_webhook_operator import SlackWebhookOperator
 
 
 
@@ -134,32 +135,65 @@ load_hbase = SSHOperator(
 )
 
 
+
+##code for Gmail smtp server
+##make sure settings are configured in airflow.config
+##also make sure to generate app password from gmail(for this enable 2 factor authentication)
+
+# success_notify = EmailOperator(
+#     task_id='sucess_email_notify',
+#     to='gowk510@gmail.com',
+#     subject='Pipeline Execution Success',
+#     html_content=""" <h1>Great job :) data has been loaded to hbase table.</h1> """,
+#     trigger_rule='all_success',
+#     dag=dag
+# )
+
+# failure_notify = EmailOperator(
+#     task_id='failure_email_notify',
+#     to='gowk510@gmail.com',
+#     subject='Pipeline Execution failed',
+#     html_content=""" <h1>Sorry :( Failed to load data into hbase table .</h1> """,
+#     trigger_rule='all_failed',
+#     dag=dag
+# )
+
+
+#------------------------------------------------------------#
+
+##code for slack notification setup
+
+def slack_password():
+    return '/T04KMBTUG4Q/B04JUQ8LS3X/3Evu7i8WAmouuFKbYVg6h0KT'
+
+success_notify = SlackWebhookOperator(
+    task_id='sucess_slack_notify',
+    http_conn_id ='slack_webhook',
+    message ='Data loaded successfully in Hbase',
+    username='airlfow',
+    webhook_token = slack_password(),
+    dag=dag
+)
+
+failure_notify = SlackWebhookOperator(
+    task_id='failure_slack_notify',
+    http_conn_id ='slack_webhook',
+    message ='Failed to load data in Hbase',
+    username='airlfow',
+    webhook_token = slack_password(),
+    dag=dag,
+    trigger_rule = 'all_failed'
+)
+
+
+
+
+
+
 # dummy = DummyOperator(
 #     task_id='dummy',
 #     dag=dag
 # )
-
-#make sure settings are configured in airflow.config
-#also make sure to generate app password from gmail(for this enable 2 factor authentication)
-success_notify = EmailOperator(
-    task_id='sucess_email_notify',
-    to='gowk510@gmail.com',
-    subject='Pipeline Execution Success',
-    html_content=""" <h1>Great job :) data has been loaded to hbase table.</h1> """,
-    trigger_rule='all_success',
-    dag=dag
-)
-
-failure_notify = EmailOperator(
-    task_id='failure_email_notify',
-    to='gowk510@gmail.com',
-    subject='Pipeline Execution failed',
-    html_content=""" <h1>Sorry :( Failed to load data into hbase table .</h1> """,
-    trigger_rule='all_failed',
-    dag=dag
-)
-
-
 
 
 sensor >>  import_customer_info 
