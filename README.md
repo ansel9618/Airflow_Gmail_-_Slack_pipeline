@@ -2,7 +2,7 @@
 Tools used for Pipeline implementation 🦖
 
 ```
-Storage      :AWS S3
+Storage      :AWS S3,HDFS
 
 Warehouse    :Hive
 
