@@ -1,6 +1,8 @@
 # Airflow_Gmail_-_Slack_pipeline
 Tools used for Pipeline implementation 🦖
 
+![My Image](https://github.com/ansel9618/Airflow_Gmail_-_Slack_pipeline/blob/main/images/img1.png)
+
 ```
 Storage      :AWS S3,HDFS
 
